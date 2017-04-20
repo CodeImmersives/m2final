@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- meta tags, etc -->
+        <style>
+            /* css reset */
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            /* typography */
+            
+            /* color scheme */
+            body * {
+                font-family: Lato, Helvetica, Arial, sans-serif;
+                color: #666;
+            }
+            
+            #main-header,
+            footer{
+                background: lightsteelblue;
+            }
+            
+            /* layout */
+            header, 
+            #content, 
+            footer {
+                padding:  30px;
+            }
+            #top-nav {
+                float: right;
+            }
+            
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        <header id="main-header">
+            <img src="" alt="logo" />
+            <h1 id="site-header">Know It All</h1>
+            <div id= "tagline">Ace Your Technical Interview!</div>
+            <nav id="top-nav">
+                <a>Login</a>
+            </nav>
+        </header>
+        
+        <div id="content">
+            <section>
+                <header>
+                    <h2>Check Out Frequently Asked Questions</h2>
+                    <span>Total Questions 2</span>
+                    <label for="revealAnswers">Reveal Answers</label>
+                    <input name="reveal-answers" type= "checkbox">
+                </header>
+                <ul>
+                    <li>
+                        <div class="question">What is JavaScript?</div>
+                        <div class="answer">JavaScript is a scripting language most often used for client-side web development.</div>
+                        <div class="question-rating">
+                            Rating ****
+                        </div>
+                        <div class = "question-author">
+                            dude123
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="question">What is the difference between JavaScript and JScript? ?</div>
+                        <div class="answer">Both JavaScript and Jscript are almost similar. JavaScript was developed by Netscape. Microsoft reverse engineered Javascript and called it JScript</div>
+                        <div class="question-rating">
+                            Rating ****
+                        </div>
+                        <div class = "question-author">
+                            dude123
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        
+        <footer>
+            <a>Scroll To Top</a>
+            <nav><a>Contact Us</a></nav>
+        </footer>
+    </body>
+</html>
