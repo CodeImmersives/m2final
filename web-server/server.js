@@ -1,21 +1,10 @@
 var express = require('express');
-var port = 3000;
+var port = process.env.port || 3000;
 var root = __dirname + '/public/';
 var app = express();
+var middleWare = require('./middleware.js');
 
 console.log(__dirname);
-
-var middleWare = {
-    requestAuthentication: function(req, res, next) {
-        console.log('Authentication request!')
-        next();
-    },
-    logger: function(req, res, next) {
-        var dt = new Date().toString();
-        console.log("Request: " + + ' ' + dt + req.method + ' ' + req.originalUrl);
-        next();
-    },
-}
 
 app.use(middleWare.logger);
 
