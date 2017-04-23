@@ -3,7 +3,7 @@
 server:
 
 ```
-$ cd /webserver
+$ cd /web-server
 $ npm install
 $ node server.js
 ```
