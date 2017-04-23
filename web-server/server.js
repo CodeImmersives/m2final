@@ -1,5 +1,5 @@
 var express = require('express');
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 var root = __dirname + '/public/';
 var app = express();
 var middleWare = require('./middleware.js');
