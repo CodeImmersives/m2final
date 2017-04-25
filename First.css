@@ -1,0 +1,23 @@
+.col-1 {
+    width: 20%;
+    float: left;
+}
+
+.col-2 {
+    width: 80%;
+    float: left;
+}
+
+header {
+    margin: auto;
+    background-color: deepskyblue;
+    text-align: center;
+    
+}
+
+button {
+    float: right;
+    width: 80px;
+    height: 30px;
+    margin: 10px;
+}
