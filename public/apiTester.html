@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <body>
+        <h1>Get and Post data</h1>
+        
+        <input id="q" value = "lorem ipsum question" />
+        <input id="a" value = "lorem ipsum answer" />
+        <select id="input-cat">
+            <option>JS</option>
+            <option>HTML</option>
+        </select>
+        <hr>
+        
+        <button id="postdata">Post Some Data</button>
+        <button id="getall">Get All Data</button>
+        <button id="getcategory">Get Category</button>
+        <select id="cat">
+            <option>JS</option>
+            <option>HTML</option>
+        </select>
+        
+        <script>
+            /**
+            */
+            function postSomeData() {
+                var o = {
+                    question: document.querySelector('#q').value,
+                    answer: document.querySelector('#a').value,
+                    category: document.querySelector('#input-cat').value
+                };
+            
+                var xhttp = new XMLHttpRequest();
+                var url = "http://localhost:3000/qas";
+                
+                xhttp.onreadystatechange = function() {
+    
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                    }
+                };
+                xhttp.open("POST", url, true);
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.send(JSON.stringify(o));
+            }
+            
+           /**
+            */
+            
+            function getAll() {
+                
+                var xhttp = new XMLHttpRequest();
+                var url = "http://localhost:3000/qas"
+                  xhttp.onreadystatechange = function() {
+                   if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                    }
+                  };
+                  xhttp.open("GET", url, true);
+                  xhttp.send();                
+            };
+            
+            
+            function getCategory() {
+                var cat = document.getElementById('cat').value;
+                
+                var xhttp = new XMLHttpRequest();
+                var url = "http://localhost:3000/qas?category=" + cat;
+                  xhttp.onreadystatechange = function() {
+                   if (this.readyState == 4 && this.status == 200) {
+                        console.log(this.responseText);
+                    }
+                  };
+                  xhttp.open("GET", url, true);
+                  xhttp.send();                
+            };
+            
+            // assign event handlers here
+            
+            document.querySelector('#postdata').onclick = postSomeData;
+            document.querySelector('#getall').onclick = getAll;
+            document.querySelector('#getcategory').onclick = getCategory;
+        </script>
+    </body>
+</html>

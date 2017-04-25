@@ -1,34 +1,51 @@
 var express = require('express');
 var port = process.env.PORT || 3000;
-var root = __dirname + '/public/';
+var websiteRoot = __dirname + '/public/';
+var bodyParser = require('body-parser');
+
 var app = express();
 var middleWare = require('./middleware.js');
+var qaItemController = require('./qaItemController.js');
 
-console.log(__dirname);
 
 app.use(middleWare.logger);
+app.use(bodyParser.json());  // helps to process post data
 
-// no authentication required        
-app.use(express.static(root));
-
-// pages below requre authentication
-app.use(middleWare.requestAuthentication);
-
-app.get('/home', function(req, res) {
-    
-    res.sendFile('home.html', {
-        root: root
-    });     
+// webserver root
+app.get('/', function(req, res) {
+    res.sendFile(websiteRoot + 'index.html');    
 });
 
-app.get('/user', function(req, res) {
+// public website
+app.use(express.static(websiteRoot));
+
+
+// RESTful web services
+
+// Read
+app.get('/qas', function(req, res) {
+    var qaItems;
     
-    res.sendFile('user.html', {
-        root: root
-    });     
+    if (req.query && req.query.category) {
+        qaItems = qaItemController.getCategory(req.query.category);
+    } else  {
+        qaItems = qaItemController.getAll();
+    }                 
+    res.json(qaItems);  
 });
+
+// Create 
+app.post('/qas', function(req, res) {
+    var qaItem = qaItemController.qaItemCreate(req.body);
+    res.json(qaItem);
+});
+
 
 
 app.listen(port, function() {
     console.log("Listening to requests at port " + port)
 });
+
+
+// TODO: authentication
+// app.use(middleWare.requestAuthentication);
