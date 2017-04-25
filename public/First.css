@@ -21,3 +21,11 @@ button {
     height: 30px;
     margin: 10px;
 }
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
