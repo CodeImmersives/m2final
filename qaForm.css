@@ -1,0 +1,113 @@
+html {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("br-image.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("br-image.jpg");
+    font-weight: 300;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+textarea#questionBox {
+    display: block;
+    text-align: center;
+    /*background-color: rgba(77, 76, 76, 0.15);*/
+    background-color: transparent;
+    color: #c0c7fa;
+    font-size: 16px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    margin: 5px 0px 10px 0px;
+    padding: 10px;
+    height: 175px;
+    width: 550px;
+    /*border:#999 3px transparent; */
+    border: none;
+    border-bottom: 1.5px solid #c0c7fa;
+    font-family: "Halevetica neue, Halevetica, sans-serif;
+ transition: all 0.25s ease-in-out;
+    
+    /*--TO GIVE IT THAT TWITTER GLOW--*/
+    
+    /*-webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 0);
+    -moz-box-shadow: 0 0 5px rgba(18, 81, 128, 0);*/
+}
+
+textarea#questionBox:focus {
+    color: #c0c7fa;
+    text-align: center;
+    /*background-color: rgba(77, 76, 76, 0.15);*/
+    outline: none;
+    /*border:#35a5e5 3px transparent;*/
+    border: none;
+    border-bottom: 1.5px solid #c0c7fa;
+    font-family: "Halevetica neue, Halevetica sans-serif;
+ 
+    /*--TO GIVE IT THAT TWITTER GLOW--*/
+    
+    /*box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    -moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);*/
+}
+
+
+/*------BUTTONS------*/
+
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+    float: right;
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #c0c7fa;
+    border: 1px solid #c0c7fa;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #c0c7fa;
+    color: #c0c7fa;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+    background-color: #c0c7fa;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #c0c7fa;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #c0c7fa;
+    color: #fff;
+}
+
+/*---This is the container for the form elements---*/
+
+.container {
+    max-width: 570px;
+    margin-left: 32.5%;
+    margin-top: 10%;
+}
+
