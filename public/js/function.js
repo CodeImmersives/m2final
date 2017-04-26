@@ -1,9 +1,9 @@
 var allSelector = document.getElementById("all");
 
-function createQuestion() {
+function displayQuestions(qaItems) {
     var questionBox = document.getElementById("question-box");
 
-    for (var i = 0; i <7; i++) {
+    for (var i = 0; i < qaItems.length; i++) {
         var checkBox = document.createElement("INPUT");
         var header = document.createElement("h3");
         var sentence = document.createElement("p");
@@ -33,4 +33,23 @@ function createQuestion() {
 }
     
 
-allSelector.onclick = createQuestion;
+
+var baseurl = "http://localhost:3000";
+
+function getAll() {                
+    var xhttp = new XMLHttpRequest();
+    var url = baseurl + "/qas"
+      xhttp.onreadystatechange = function() {
+       if (this.readyState == 4 && this.status == 200) {
+           var questions = JSON.parse(this.responseText);
+           displayQuestions(questions);
+        }
+      };
+      xhttp.open("GET", url, true);
+      xhttp.send();                
+};
+
+
+
+
+allSelector.onclick = getAll;
