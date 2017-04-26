@@ -36,10 +36,21 @@ app.get('/qas', function(req, res) {
 
 // Create 
 app.post('/qas', function(req, res) {
+    // todo validatiion
     var qaItem = qaItemController.qaItemCreate(req.body);
     res.json(qaItem);
 });
 
+// Delete
+app.delete('/qas/:id', function(req, res) {
+    var qaDeletedItem;
+
+    if (req.params) {
+        console.log(req.params);
+        qaDeletedItem = qaItemController.deleteQA(req.params.id);
+    }      
+    res.json(qaDeletedItem);  
+});
 
 
 app.listen(port, function() {
