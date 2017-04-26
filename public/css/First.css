@@ -54,10 +54,25 @@ button {
     float: right;
     width: 80px;
     height: 30px;
-    margin: 10px;
+    margin: 5px;
+    display: inline;
 }
 
 h1, h2, h3 {
     font-weight: 400;
+    font-size: 30px;
     
+}
+
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.green {
+    color: green;
 }
