@@ -52,6 +52,12 @@ app.delete('/qas/:id', function(req, res) {
     res.json(qaDeletedItem);  
 });
 
+// Update
+app.put('/qas', function(req, res) {
+    qaUpdatedItem = qaItemController.updateQA(req.body)    
+    res.json(qaUpdatedItem);  
+});
+
 
 app.listen(port, function() {
     console.log("Listening to requests at port " + port)

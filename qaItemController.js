@@ -46,13 +46,13 @@ var qaItemController = {
     // update
     updateQA(item) {
         var idx = findItemIndex(item.id);
-        console.log('*******');
         
         if (idx >= 0) {
             qaItems[idx].question = item.question;
             qaItems[idx].answer = item.answer;
             // todo: finish the rest of the properties          
         }
+        return qaItems[idx];
     } , 
         
     // delete

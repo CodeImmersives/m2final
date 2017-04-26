@@ -32,8 +32,10 @@
         </section>        
         <section>
             <button id="del">Delete Item with this Id</button>
+            <button id="upd">Update Item with this Id</button>
             <input id="itemid" />
         </section>
+     
      
   <!--- test js -->      
         <script>
@@ -107,12 +109,38 @@
             };
             
             
+            function updateItem() {
+                var itemId = document.getElementById('itemid').value;
+                  var o = {
+                        id:itemId,
+                        question: document.querySelector('#q').value,
+                        answer: document.querySelector('#a').value,
+                        category: document.querySelector('#input-cat').value
+                    };
+
+                    var xhttp = new XMLHttpRequest();
+                    var url = baseurl + "/qas";
+
+                    xhttp.onreadystatechange = function() {
+
+                        if (this.readyState == 4 && this.status == 200) {
+                            console.log(this.responseText);
+                        }
+                    };
+                    xhttp.open("PUT", url, true);
+                    xhttp.setRequestHeader("Content-Type", "application/json");
+                    xhttp.send(JSON.stringify(o));               
+            };
+            
+            
+            
             // assign event handlers here
             
             document.querySelector('#postdata').onclick = postSomeData;
             document.querySelector('#getall').onclick = getAll;
             document.querySelector('#getcategory').onclick = getCategory;
             document.querySelector('#del').onclick = deleteItem;
+            document.querySelector('#upd').onclick = updateItem;
         </script>
     </body>
 </html>
