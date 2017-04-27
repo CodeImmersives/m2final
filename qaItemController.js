@@ -19,6 +19,8 @@ var qaItemController = {
     // create
     qaItemCreate: function (qaItem) {
         
+        // todo: validate if qa isn't empty
+        
         // generate unique id;
         var maxId = 0;
         qaItems.forEach(function(item){
@@ -45,8 +47,8 @@ var qaItemController = {
         
     // update
     updateQA(item) {
+        // todo: validate if qa isn't empty
         var idx = findItemIndex(item.id);
-        
         if (idx >= 0) {
             qaItems[idx].question = item.question;
             qaItems[idx].answer = item.answer;
@@ -58,8 +60,6 @@ var qaItemController = {
     // delete
     deleteQA(id) {
         var idx = findItemIndex(id);
-        
-        console.log(idx + '******');
         
         if (idx >= 0) {
            return qaItems.splice(idx, 1);

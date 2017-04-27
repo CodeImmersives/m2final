@@ -9,7 +9,8 @@ var qaItemController = require('./qaItemController.js');
 
 
 app.use(middleWare.logger);
-app.use(bodyParser.json());  // helps to process post data
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true }) );
 
 // webserver root
 app.get('/', function(req, res) {
@@ -58,6 +59,12 @@ app.put('/qas', function(req, res) {
     res.json(qaUpdatedItem);  
 });
 
+app.post('/formtest',
+        function(req, res) {
+        console.log(req.body);
+        var qaItem = qaItemController.qaItemCreate(req.body);
+        res.json(qaItem);
+});
 
 app.listen(port, function() {
     console.log("Listening to requests at port " + port)
