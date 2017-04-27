@@ -10,7 +10,7 @@ var qaItemController = require('./qaItemController.js');
 
 app.use(middleWare.logger);
 app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }) );
+//app.use(bodyParser.urlencoded({ extended: true }) );
 
 // webserver root
 app.get('/', function(req, res) {
