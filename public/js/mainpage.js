@@ -1,39 +1,51 @@
 var allSelector = document.getElementById("all");
 
+function setupAnswerToggle(answer) {
+    var button = document.createElement("button");
+    button.innerHTML  = '&#9786; Answer!';
+    button.onclick = function () {
+        //this.parentNode.appendChild(showAnswer);
+        //showAnswer.innerHTML = "&#9752; " + qa.answer;
+        answer.className = "show qaWrap green";
+        this.className = "hide";
+    }
+
+    return button;
+}
+
 function displayOneQuestion(qa) {
         var questionBox = document.getElementById("question-box");
         var container = document.createElement("div");
         var checkBox = document.createElement("INPUT");
         var header = document.createElement("h3");
         var sentence = document.createElement("p");
+        var answer = document.createElement("p");
+        
         var deleteAnswer = document.createElement("button");
-        var answer = document.createElement("button");
-        var showAnswer = document.createElement("p");
-        
-        deleteAnswer.onclick = function () {
-        this.parentNode.className = "hide qaWrap";
+            deleteAnswer.onclick = function () {
+            this.parentNode.className = "hide qaWrap";
         }
-        
-        answer.onclick = function () {
-            this.parentNode.appendChild(showAnswer);
-            showAnswer.innerHTML = "&#9752; " +qa.answer;
-            showAnswer.className = "show qaWrap green";
-        }
-        
+  
         checkBox.setAttribute("type", "checkbox");        
         header.innerText = 'Question' + qa.id;
         sentence.innerText = ': ' + qa.question;
+        answer.innerText = ': ' + qa.answer;
+    
         deleteAnswer.innerHTML = "&#9986; Delete";
-        answer.innerHTML  = '&#9786; Answer!';
+
         container.className = "show qaWrap";
         
-    
+        var showAnswer = setupAnswerToggle(answer);  
+      
         questionBox.appendChild(container);
         container.appendChild(header);
         header.appendChild(checkBox);
         container.appendChild(deleteAnswer);
-        container.appendChild(answer);
+        container.appendChild(showAnswer);
         container.appendChild(sentence);
+        container.appendChild(answer);
+    
+        
 }
 
 function displayQuestions(qaItems) {
