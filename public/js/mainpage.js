@@ -61,11 +61,7 @@ function displayQuestions(qaItems) {
     };
 }
 
-
-    
-    // error this function(let's check it out later)
-
-var baseurl = "http://localhost:3000";
+var baseurl = window.location.origin;
 
 function getAll() {                
     var xhttp = new XMLHttpRequest();
