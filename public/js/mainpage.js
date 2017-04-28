@@ -1,6 +1,6 @@
 var allSelector = document.getElementById("all");
 
-function setupAnswerToggle() {
+function setupAnswerToggle(answer) {
     var button = document.createElement("button");
     button.innerHTML = '&#9786; Answer!';
     button.onclick = function() {
@@ -12,7 +12,6 @@ function setupAnswerToggle() {
 
     return button;
 }
-
 
 function displayOneQuestion(qa) {
     var questionBox = document.getElementById("question-box");
@@ -27,7 +26,7 @@ function displayOneQuestion(qa) {
         this.parentNode.className = "hide qaWrap";
     }
     
-    var showAnswer = setupAnswerToggle();
+    var showAnswer = setupAnswerToggle(answer);
 
     header.innerText = 'Question' + qa.id;
     sentence.innerText = ': ' + qa.question;
