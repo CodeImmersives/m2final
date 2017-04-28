@@ -33,13 +33,12 @@ function displayOneQuestion(qa) {
     sentence.innerText = ': ' + qa.question;
     answer.innerText = ': ' + qa.answer;
 
-    container.className = "show qaWrap";
-
-    container.appendChild(showAnswer);
-    container.appendChild(sentence);
-    container.appendChild(answer);
     container.appendChild(header);
     container.appendChild(hideQuestion);
+    container.appendChild(showAnswer);
+    container.appendChild(sentence);
+    container.appendChild(answer); 
+    container.className = "show qaWrap";
     questionBox.appendChild(container);
 }
 
