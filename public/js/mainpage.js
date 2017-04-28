@@ -19,6 +19,7 @@ function displayOneQuestion(qa) {
     var header = document.createElement("h3");
     var sentence = document.createElement("p");
     var answer = document.createElement("p");
+    answer.className = "hide";
 
     var hideQuestion = document.createElement("button");
     hideQuestion.innerHTML = "&#9986; Hide";
