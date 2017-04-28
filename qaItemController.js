@@ -41,7 +41,7 @@ var qaItemController = {
     
     getCategory: function(category) {
         return qaItems.filter(function(item) {
-            return (item.category === category);
+            return (item.category.toLowerCase() === category.toLowerCase());
         });
     },   
         

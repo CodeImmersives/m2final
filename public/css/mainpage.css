@@ -21,6 +21,10 @@ body {
     list-style: none;
     display: block;
 }
+
+.main-nav li {
+    padding: 0.5em;
+}
 .main-nav li a:link,
 .main-nav li a:visited {
     padding: 8px 0;

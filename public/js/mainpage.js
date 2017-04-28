@@ -59,3 +59,11 @@ function displayQuestions(qaItems) {
 allSelector.onclick = function(){
     qaApi.getAll(displayQuestions);
 };
+
+
+document.querySelector('.main-nav').onclick = function(e) {
+    var category = e.target.dataset.category;
+    if (category) {
+        qaApi.getCategory(category, displayQuestions);
+    }
+}
