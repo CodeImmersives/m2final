@@ -49,7 +49,7 @@ function displayOneQuestion(qa) {
 }
 
 function displayQuestions(qaItems) {
-    // todo clear conttainer first
+    // todo clear container first
     var removeWrap = document.getElementsByClassName("qaWrap");
     
     while (removeWrap.length > 0) {

@@ -8,7 +8,7 @@ html {
     background-attachment: fixed;
 }
 
-textarea#questionBox {
+textarea.questionBox {
     display: block;
     text-align: center;
     /*background-color: rgba(77, 76, 76, 0.15);*/
@@ -36,7 +36,7 @@ textarea#questionBox {
     -moz-box-shadow: 0 0 5px rgba(18, 81, 128, 0);*/
 }
 
-textarea#questionBox:focus {
+textarea.questionBox:focus {
     color: #c0c7fa;
     text-align: center;
     /*background-color: rgba(77, 76, 76, 0.15);*/
