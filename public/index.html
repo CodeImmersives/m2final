@@ -1,30 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Final Project</title>
-        <link href="css/mainpage.css", type="text/css", rel="stylesheet" />
-    </head>
-    <body>
-        <header>
-            <h1>Ace Your Javascript Interview!!</h1>
-        </header>
-        <section>
-            <div class="col-1">
-                <ul class="main-nav">
-                    <li id="all"><a href="#">All</a></li>
-                    <li><a data-category="basic" href="#">Basic</a></li>
-                    <li><a data-category="intermediate" href="#">Intermediate</a></li>
-                    <li><a data-category="advanced" href="#">Advanced</a></li>   
-                    <li><a data-category="professional" href="#">Professional</a></li>
-                </ul>
+
+<head>
+    <meta charset="utf-8">
+    <title>Final Project</title>
+    <link type="text/css" href="css/mainpage.css" rel="stylesheet">
+    <link type="text/css" href="css/qaForm.css" rel="stylesheet">
+    <link type="text/css" href="css/header.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica|Ek+Mukta|Great+Vibes|Kreon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
+    <!--<link type="text/css" href="css/transitions.css" rel="stylesheet">-->
+</head>
+
+<body>
+    <header>
+        <!--<h1>Ace Your Javascript Interview!!</h1>-->
+        <div class="plate">
+  <!--<p class="script"><span>Ace</span></p>-->
+  <p class="shadow text1">Ace Your</p>
+  <p class="shadow text2">Javascript</p>
+  <p class="shadow text3">Interview</p>
+  <p class="script"><span>Team Stark</span></p>
+</div>
+    </header>
+    
+    <section>
+        <div class="col-1 nav-div">
+            <ul class="main-nav">
+                <li id="all"><a href="#">All</a></li> <br>
+                <li><a data-category="basic" href="#">Basic</a></li> <br>
+                <li><a data-category="intermediate" href="#">Intermediate</a></li> <br>
+                <li><a data-category="advanced" href="#">Advanced</a></li> <br>   
+                <li><a data-category="professional" href="#">Professional</a></li> <br>
+            </ul>
+            <h2 class="dash">&mdash;</h2>
+            <ul class="main-nav">
+                <li><a id="submit" href="submit.html">Submit Question</a></li>
+            </ul>
+
+        </div>
+
+        <div class="col-2">
+            <div id="question-box">
             </div>
-            <div class="col-2">
-                <div id="question-box">
-                </div>
-            </div>
-        </section>
-        <script src="js/qaApi.js"></script>
-        <script src="js/mainpage.js"></script>
-    </body>
+        </div>
+    </section>
+    
+    <script src="js/qaApi.js"></script>
+    <script src="js/mainpage.js"></script>
+</body>
+
 </html>

@@ -1,29 +1,33 @@
-
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     padding: 0;
     margin: 0;
     font-family: Helvetica Neue, Helvetica, Arial;
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../img/br-image.jpg");
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("../img/br-image.jpg");
+    /*background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url("../img/br-image.jpg");*/
+    background: transparent;
     background-size: cover;
-    color: #fff;
+    /*color: #fff;*/
     background-attachment: fixed;  
     background-position: center;
     height: 100vh;
 }
 
 .col-1 {
-    width: 20%;
+    padding-left: 20px;
+    padding-top: 45px;
+    height: 100vh;
+    width: 22%%;
     float: left;
+    background-color: rgba(34, 34, 34, 1); 
 }
 
 .main-nav {
     list-style: none;
     display: block;
-}
-
-.main-nav li {
-    padding: 0.5em;
 }
 .main-nav li a:link,
 .main-nav li a:visited {
@@ -39,18 +43,22 @@ body {
 
 .main-nav li a:hover,
 .main-nav li a:active {
-    border-bottom: 2px solid #4481be;
+    border-bottom: 2px solid #bdbebf;
 }
 
 .col-2 {
     width: 80%;
-    float: left;
+    float: right;
 }
 
 header {
+    height: 145px;
     margin: auto;
-    background-color: #4481be;
+    padding-right: 10px;
+    background-color: #15172c;
     text-align: center;
+    font-size: 180%;
+    border-bottom: 3px solid #bdbebf;
     
 }
 
@@ -58,24 +66,38 @@ button {
     float: right;
     width: 80px;
     height: 30px;
-    margin: 5px;
+    margin: 10px;
 }
 
 h1, h2, h3 {
     font-weight: 400;
-    font-size: 30px;
+    
+}
+
+.dash {
+    margin-left: 90px;
+    width: 75px;
+    margin-top: -20px;
+    color: 
+}
+
+.container {
     
 }
 
 
-.show {
-    display: block;
+
+
+
+.logo {
+    
 }
 
-.hide {
-    display: none;
+#qbContent {
+    float: right;
+    margin-right: 30%;
 }
 
-.green {
-    color: green;
+.nav-div {
+    border-right: 2px solid #bdbebf;
 }
