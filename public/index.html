@@ -35,13 +35,33 @@
             </ul>
             <h2 class="dash">&mdash;</h2>
             <ul class="main-nav">
-                <li><a id="submit" href="submit.html">Submit Question</a></li>
+                <li><a id="new-question" href="#">Submit Question</a></li>
             </ul>
 
         </div>
 
         <div class="col-2">
-            <div id="question-box">
+            <div id="qa-section">
+                <ul id="qa-list">
+                <li class="qa template">
+                    <a class="question" href="#">Here you will write a questionHere you will write a questionHere you will write a questionHere you will write a questionHere you will write a questionHere you will write a questionHere you will write a questionHere you will write a question</a>
+                    
+                    <a class="answer" href="#">ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER ANSWER </a>
+                    <div class="qa-controls">
+                        <a class="answer-toggle">Hide Answer</a>
+                        <a class="delete-qa">Delete</a>
+                    </div>
+                </li>
+        
+                </ul>
+            </div>
+            
+            <div id="question-form-box" class="container">
+                <form>
+                    <textarea name="qtext" class="questionBox">Question Text</textarea>
+                    <textarea name="atext" class="questionBox">Answer Text</textarea>
+                    <a href="#" class="btn btn-ghost">Submit!</a>
+                </form>    
             </div>
         </div>
     </section>

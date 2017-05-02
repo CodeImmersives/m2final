@@ -1,61 +1,95 @@
 var allSelector = document.getElementById("all");
 
 function setupAnswerToggle(answer) {
-    var button = document.createElement("button");
-    button.innerHTML = '&#9786; Answer!';
-    button.onclick = function() {
-        //this.parentNode.appendChild(showAnswer);
-        //showAnswer.innerHTML = "&#9752; " + qa.answer;
-        answer.className = "show qaWrap green";
-        this.className = "hide";
-    }
-
-    return button;
+//    var button = document.createElement("button");
+//    button.innerHTML = '&#9786; Answer!';
+//    button.onclick = function() {
+//        //this.parentNode.appendChild(showAnswer);
+//        //showAnswer.innerHTML = "&#9752; " + qa.answer;
+//        answer.className = "show qaWrap green";
+//        this.className = "hide";
+//    }
+//
+//    return button;
 }
 
+/**
+    add one question/answer pair to DOM
+*/
 function displayOneQuestion(qa) {
-    var questionBox = document.getElementById("question-box");
-    var container = document.createElement("div");
-    var header = document.createElement("h3");
-    var sentence = document.createElement("p");
-    var answer = document.createElement("p");
-    answer.className = "hide";
+    var list = document.getElementById("qa-list");
+    var qaLi = document.createElement("li");
+    var question = document.createElement("a");
+    question.className="question";
+    var answer = document.createElement("a");
+    answer.className="answer"
+   
+    question.innerText = qa.question;
+    answer.innerText = qa.answer;
 
-    var hideQuestion = document.createElement("button");
-    hideQuestion.innerHTML = "&#9986; Hide";
-    hideQuestion.onclick = function() {
-        this.parentNode.className = "hide qaWrap";
-    }
+    qaLi.appendChild(question);
+    qaLi.appendChild(answer);
     
-    var showAnswer = setupAnswerToggle(answer);
-
-    header.innerText = 'Question' + qa.id;
-    sentence.innerText = ': ' + qa.question;
-    answer.innerText = ': ' + qa.answer;
-
-    container.appendChild(header);
-    container.appendChild(hideQuestion);
-    container.appendChild(showAnswer);
-    container.appendChild(sentence);
-    container.appendChild(answer); 
-    container.className = "show qaWrap";
-    questionBox.appendChild(container);
+    displayOneQuestionControls(qaLi);
+    list.appendChild(qaLi);
 }
 
+/**
+    Display controls for one questions
+*/
+function setupAnswerToggle(qaLi, answerToggle) {
+    answerToggle.onclick = function() {
+        var cl = qaLi.className;
+        if (cl && cl.includes("hide-answer")) {
+            qaLi.className = "";
+        } else {
+            qaLi.className = "hide-answer";
+        }
+            
+        console.log (this.className);
+    }
+}
+
+function displayOneQuestionControls(qaLi) {
+     var controls =  document.createElement("div");
+     controls.className = "qa-controls";
+     var del = document.createElement("a");
+     del.className = "delete-qa";
+     del.innerText = "Delete";
+     var answerToggle = document.createElement("a");
+     answerToggle.className = "answer-toggle";
+     answerToggle.innerText = "Hide Answer";
+    
+     controls.appendChild(del);
+     controls.appendChild(answerToggle);
+    
+     setupAnswerToggle(qaLi, answerToggle);
+     qaLi.appendChild(controls);
+}
+
+
+
+/**
+    add list of question/answers to the webpage
+    (practicing "while" loop, we should have remove the whole container instead)
+*/
 function displayQuestions(qaItems) {
-
-    var removeWrap = document.getElementsByClassName("qaWrap");
-
-    while (removeWrap.length > 0) {
-        removeWrap[0].remove();
+    
+    // cleanup the list before regenerating
+    var qas = document.getElementById("qa-list").childNodes;
+    while (qas.length > 0) {
+        qas[0].remove();
     }
 
+    // create list    
     for (var i = 0; i < qaItems.length; i++) {
         displayOneQuestion(qaItems[i]);
     };
 }
 
-
+/** 
+    display all categories 
+*/
 allSelector.onclick = function(){
     qaApi.getAll(displayQuestions);
 };
@@ -63,7 +97,19 @@ allSelector.onclick = function(){
 
 document.querySelector('.main-nav').onclick = function(e) {
     var category = e.target.dataset.category;
+
     if (category) {
         qaApi.getCategory(category, displayQuestions);
     }
 }
+
+
+document.querySelector("#new-question").onclick = function(e) {
+    document.querySelector("#question-box").visibility="hidden";
+    document.querySelector("#question-form-box").visibility="visible";
+}
+
+// show all question on page render
+document.addEventListener("DOMContentLoaded", function(event) { 
+   // qaApi.getAll(displayQuestions);
+});
