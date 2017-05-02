@@ -17,6 +17,7 @@ function displayOneQuestion(qa) {
 
     qaLi.appendChild(question);
     qaLi.appendChild(answer);
+    qaLi.dataset.questionid = qa.id;
     
     displayOneQuestionControls(qaLi);
     list.appendChild(qaLi);
@@ -30,14 +31,31 @@ function setupAnswerToggle(qaLi, answerToggle) {
         var cl = qaLi.className;
         if (cl && cl.includes("hide-answer")) {
             qaLi.className = "";
+            answerToggle.innerText = "Hide Answer";
         } else {
             qaLi.className = "hide-answer";
+            answerToggle.innerText = "Show Answer";
         }
             
         console.log (this.className);
     }
 }
 
+/** Setup delete Question button 
+*/
+
+function setupDeleteQA(qaLi, delEl) {
+    delEl.onclick = function() {
+        var response = confirm("Are you sure you want to remove this question");
+        if (response) {
+            console.log("Delete this " + qaLi.dataset.questionid);
+            qaApi.deleteQuestion(qaLi.dataset.questionid, 
+                function() {
+                    qaLi.remove();
+            });
+        }
+    }
+}
 
 /**
     Display controls for one questions
@@ -57,6 +75,7 @@ function displayOneQuestionControls(qaLi) {
      controls.appendChild(answerToggle);
     
      setupAnswerToggle(qaLi, answerToggle);
+     setupDeleteQA(qaLi,del);
      qaLi.appendChild(controls);
 }
 
@@ -94,15 +113,26 @@ document.querySelector('.main-nav').onclick = function(e) {
     if (category) {
         qaApi.getCategory(category, displayQuestions);
     }
+    toggleHidden(document.querySelector("#qa-section"), false);
+    toggleHidden(document.querySelector("#question-form-box"), true);
 }
 
+function toggleHidden(el, hide) {
+    if (hide) {
+        el.style.visibility = "hidden";
+        el.style.display="none";
+    } else {
+        el.style.visibility = "visible";
+        el.style.display="block";
+    }
+}
 
 document.querySelector("#new-question").onclick = function(e) {
-    document.querySelector("#question-box").visibility="hidden";
-    document.querySelector("#question-form-box").visibility="visible";
+    toggleHidden(document.querySelector("#qa-section"), true);
+    toggleHidden(document.querySelector("#question-form-box"), false);
 }
 
 // show all question on page render
 document.addEventListener("DOMContentLoaded", function(event) { 
-   // qaApi.getAll(displayQuestions);
+   qaApi.getAll(displayQuestions);
 });
