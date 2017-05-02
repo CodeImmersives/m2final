@@ -1,20 +1,8 @@
 var allSelector = document.getElementById("all");
 
-function setupAnswerToggle(answer) {
-//    var button = document.createElement("button");
-//    button.innerHTML = '&#9786; Answer!';
-//    button.onclick = function() {
-//        //this.parentNode.appendChild(showAnswer);
-//        //showAnswer.innerHTML = "&#9752; " + qa.answer;
-//        answer.className = "show qaWrap green";
-//        this.className = "hide";
-//    }
-//
-//    return button;
-}
 
 /**
-    add one question/answer pair to DOM
+    Add one question/answer pair to DOM
 */
 function displayOneQuestion(qa) {
     var list = document.getElementById("qa-list");
@@ -35,7 +23,7 @@ function displayOneQuestion(qa) {
 }
 
 /**
-    Display controls for one questions
+    Setup answer toggle
 */
 function setupAnswerToggle(qaLi, answerToggle) {
     answerToggle.onclick = function() {
@@ -49,6 +37,11 @@ function setupAnswerToggle(qaLi, answerToggle) {
         console.log (this.className);
     }
 }
+
+
+/**
+    Display controls for one questions
+*/
 
 function displayOneQuestionControls(qaLi) {
      var controls =  document.createElement("div");
