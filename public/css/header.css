@@ -1,0 +1,73 @@
+
+/*
+font-family: 'Economica', sans-serif;
+font-family: 'Great Vibes', cursive;
+font-family: 'Ek Mukta', sans-serif;
+font-family: 'Kreon', serif; */
+
+
+@import url(http://fonts.googleapis.com/css?family=Arvo:700);
+@import url(http://fonts.googleapis.com/css?family=Seaweed+Script);
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.plate {
+    padding-top: 20px;
+  width: 100%;
+  margin: 10% auto;
+    margin-top: 0;
+}
+.shadow {
+  color: #fff;
+  font-family: 'Syncopate', sans-serif;
+  font-weight: bold;
+  /*text-shadow:
+    -1px -1px 0 #222,
+    1px -1px 0 #222,
+    -1px 1px 0 #222,
+    2px 2px 0 #222,
+    2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    2px 2px 0 #fff;*/
+  line-height: 1em;
+  letter-spacing: 0.1em;
+  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+  -moz-transform: scaleY(0.7);
+  margin:0;
+  text-align: right;
+}
+.script {
+  font-family: 'Syncopate', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  position: relative;
+  margin:0;
+    float: right;
+}
+.script span {
+  background-color: rgba(80, 76, 76, 0.63)2;
+  padding: 0 0.3em;
+}
+.script:before {
+  content:"";
+  display: block;
+  position: absolute;
+  z-index:-1;
+  top: 50%;
+  width: 100%;
+  border-bottom: 3px solid #bdbebf;
+}
+.text1 {
+  font-size: 20px;
+}
+.text2 {
+  font-size: 45px;
+}
+.text3 {
+  font-size: 20px;
+}
