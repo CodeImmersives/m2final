@@ -24,7 +24,7 @@ textarea#questionBox {
     /*border:#999 3px transparent; */
     border: none;
     border-bottom: 1.5px solid #bdbebf;
-    font-family: "Halevetica neue, Halevetica, sans-serif;
+    font-family: 'Syncopate', sans-serif;
  transition: all 0.25s ease-in-out;
     
     /*--TO GIVE IT THAT TWITTER GLOW--*/
@@ -44,7 +44,7 @@ textarea#questionBox:focus {
     /*border:#35a5e5 3px transparent;*/
     border: none;
     border-bottom: 1.5px solid #bdbebf;
-    font-family: "Halevetica neue, Halevetica sans-serif;
+    font-family: 'Syncopate', sans-serif;
  
     /*--TO GIVE IT THAT TWITTER GLOW--*/
     
