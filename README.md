@@ -1,4 +1,14 @@
 # m2final
+## Code Immersives CIS MODULE TWO team final project ##
+## A web application prototype ##
+### Features: ###
+* express server
+* REST api (intro)
+* CRUD (intro)
+* Ajax/JSON
+* Pure JS (DOM, Loops, objects, functions, variables, etc)
+* HTML5
+* CSS3
 
 server:
 
@@ -11,11 +21,9 @@ $ node server.js
 browser:
 
 ```
-localhost:3000/apiTester.html (verify endpoints)
+localhost:3000/api/apiTester.html (verify endpoints)
 
-localhost:3000/index.html (for now - this is your first page)
-localhost:3000/home
-localhost:3000/user
+localhost:3000/index.html
 
 
 ```
