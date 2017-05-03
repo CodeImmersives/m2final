@@ -138,26 +138,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
    qaApi.getAll(displayQuestions);
 });
 
-// new post some data
-            function postData() {
-                var o = {
-                    question: document.getElementById('qtext').value,
-                    answer: document.getElementById('atext').value,
-                    category: document.getElementById('input-cat').value
-                };
-            
-                var xhttp = new XMLHttpRequest();
-                var url = baseurl + "/qas";
-                
-                xhttp.onreadystatechange = function() {
+function postQA() {  
+    var o = {
+        question: document.getElementById('qtext').value,
+        answer: document.getElementById('atext').value,
+        category: document.getElementById('input-cat').value
+    };         
+    qaApi.createQuestion(o, function (){
+        console.log("your questions are posted");
+        // change view
+    toggleHidden(document.querySelector("#qa-section"), false);
+    toggleHidden(document.querySelector("#question-form-box"), true);
+        //get data in 
+        qaApi.getAll(displayQuestions);
+    });
     
-                    if (this.readyState == 4 && this.status == 200) {
-                        console.log(this.responseText);
-                    }
-                };
-                xhttp.open("POST", url, true);
-                xhttp.setRequestHeader("Content-Type", "application/json");
-                xhttp.send(JSON.stringify(o));
-            }
+}
+ 
+document.getElementById('submitBtn').onclick = postQA;
 
-            document.getElementById('submitBtn').onclick = postData;
+
