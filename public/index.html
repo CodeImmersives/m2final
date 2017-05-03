@@ -58,9 +58,15 @@
             
             <div id="question-form-box" class="container">
                 <form>
-                    <textarea name="qtext" class="questionBox">Question Text</textarea>
-                    <textarea name="atext" class="questionBox">Answer Text</textarea>
-                    <a href="#" class="btn btn-ghost">Submit!</a>
+                    <textarea id="qtext" name="qtext" class="questionBox" placeholder="Question Text" required></textarea>
+                    <textarea id="atext" name="atext" class="questionBox" placeholder="Answer Text" required></textarea>
+                    <select id="input-cat">
+                        <option>Basic</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                        <option>Professional</option>
+                    </select>
+                    <a id="submitBtn" href="#" class="btn btn-ghost">Submit!</a>
                 </form>    
             </div>
         </div>

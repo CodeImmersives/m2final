@@ -99,6 +99,25 @@ function displayQuestions(qaItems) {
     };
 }
 
+/**
+    Create one question and refresh question list
+*/
+function postQA() {  
+    var o = {
+        question: document.getElementById('qtext').value,
+        answer: document.getElementById('atext').value,
+        category: document.getElementById('input-cat').value
+    };         
+    qaApi.createQuestion(o, function (){
+        console.log("your questions are posted");
+        // change view
+        toggleHidden(document.querySelector("#qa-section"), false);
+        toggleHidden(document.querySelector("#question-form-box"), true);
+        //get data in 
+        qaApi.getAll(displayQuestions);
+    });    
+}
+ 
 /** 
     display all categories 
 */
@@ -136,3 +155,6 @@ document.querySelector("#new-question").onclick = function(e) {
 document.addEventListener("DOMContentLoaded", function(event) { 
    qaApi.getAll(displayQuestions);
 });
+
+
+document.getElementById('submitBtn').onclick = postQA;

@@ -168,3 +168,12 @@ h1, h2, h3 {
 .hide-answer .answer {
     visibility: hidden;
 }
+/* todo cleanup */
+select {
+    float: left;
+    width: 150px;
+    height: 30px;
+    margin: 8px;
+    background: transparent;
+    color: #fff;
+}
