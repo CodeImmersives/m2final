@@ -2,7 +2,7 @@
 ## Code Immersives CIS MODULE TWO team final project ##
 ## A web application prototype ##
 ### Features: ###
-* express server
+* Node.js/Express server
 * REST api (intro)
 * CRUD (intro)
 * Ajax/JSON
